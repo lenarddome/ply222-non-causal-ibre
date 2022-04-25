@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Make your decision!</title>
+
+    <!--Import JSPsych libraries-->
+    <script src="jspsych-6.1/jspsych.js"></script>
+    <script src="jspsych-6.1/plugins/jspsych-html-keyboard-response.js"></script>
+    <link href="jspsych-6.1/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+    <script src="jspsych-6.1/plugins/jspsych-categorize-html.js" type="text/javascript"></script>
+    <script src="jspsych-6.1/plugins/jspsych-external-html.js" type="text/javascript"></script>
+
+    <!--Import experiment JSPsych-->
+    <script src="experiment.js"></script>
+
+    <!--JATOS-->
+    <script src="jatos.js"></script>
+
+  </head>
+  <style>
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+  </style>
+  <body></body>
+  <script>
+
+    <!--Run Experiment-->
+
+    var now = new Date();
+    var sessionCurrent = [now.getFullYear()] + [now.getMonth()] + [now.getDate()] + [now.getHours()];
+    jatos.onLoad(function() {
+      jsPsych.init({
+        timeline: [welcome, consent, creditReminder, instructionTraining,
+                   trainingPhase, instructionTest, testPhase, debrief],
+        show_preload_progress_bar: true,
+      on_finish: function() {
+        jsPsych.data.get('csv').filter({include: true});
+        jatos.endStudyAndRedirect("https://uopsop.sona-systems.com/webstudy_credit.aspx?experiment_id=4060&credit_token=83ba322524734ec0b9b66340d64af0ce&survey_code=" + jatos.urlQueryParameters.id);
+          },
+       });
+    });
+  </script>
+
+</html>
