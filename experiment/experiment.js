@@ -69,25 +69,25 @@ const intertrial = {
 // instructions for training phase
 const instructionTraining = {
   type: 'html-keyboard-response',
-  stimulus: ['<p style="display:inline-block;align:center;font-size:20pt;' +
+  stimulus: ['<p style="display:inline-block;line-height:2;align:center;font-size:20pt;' +
     'width:60%"> In this phase, you will be shown various geometric shapes. ' +
     'These shapes can either be a circle &#x23FA, a triangle &#x25B2, a ' +
     'square &#x23F9, a hexagon &#x2B23, or a diamond &#x25C6. These shapes ' +
     'will appear in groups of three. Your task is to study and try ' +
-    'to remember the shapes that appeared together.<br><br> You will ' +
+    'to memorise the shapes that appeared together.<br><br>You will ' +
     'see 5 blocks of 8 shape combinations - 40 overall. However, you will ' +
     'also be given the opportunity to skip this phase after the 16th shape ' +
     'combination at the end of the second block.<br><br>' +
-    'You will need to press the spacebar after you studied each arrangement.' +
+    'You will need to press the spacebar after you studied each combinations.' +
     'You can study each one for 10 seconds.' +
-    '</p><br>Press \'p\' to continue.'],
-  choices: ['p'],
+    '<br><br>Press \'x\' to continue.</p>'],
+  choices: ['x'],
 };
 
 // instructions for test phase
 const instructionTest= {
   type: 'html-keyboard-response',
-  stimulus: ['<p style="display:inline-block;align:center;font-size:20pt;' +
+  stimulus: ['<p style="display:inline-block;line-height:2;align:center;font-size:20pt;' +
     'width:60%">' +
     'Well done on completing the first phase! Now, you will begin the test ' +
     'phase. In this phase of the experiment, you will be asked to complete ' +
@@ -98,8 +98,8 @@ const instructionTest= {
     String.fromCharCode(disease_keylist[1]) + '.<br><br> This phase will have' +
     ' 5 blocks of 24 combinations to complete. You will have a chance' +
     ' to rest between blocks.' +
-    '<br><br>Press \'p\' to continue.</p>'],
-  choices: ['p'],
+    '<br><br>Press \'x\' to continue.</p>'],
+  choices: ['x'],
 };
 
 // welcome message
@@ -110,8 +110,8 @@ const welcome = {
   ],
   choices: ['space'],
   on_start: function() {
-    //const pptID = jatos.urlQueryParameters.id;
-    //jsPsych.data.addProperties({ppt: pptID, session: sessionCurrent});
+    const pptID = jatos.urlQueryParameters.id;
+    jsPsych.data.addProperties({ppt: pptID, session: sessionCurrent});
   },
 };
 
@@ -119,10 +119,10 @@ const welcome = {
 const testRest = {
   type: 'html-keyboard-response',
   stimulus: ['<p style = "font-size:20px;line-height:2;width:600px ">' +
-        'You have completed a block. Take a breath and press \'p\' ' +
+        'You have completed a block. Take a breath and press \'x\' ' +
         'on the keyboard when you are ready to continue</p>',
   ],
-  choices: ['p'],
+  choices: ['x'],
 };
 
 // remind people to press EXIT EXPERIMTENT button at the end
@@ -133,8 +133,8 @@ const creditReminder = {
       'width:60%">In order to receive the allocated points after completing the experiment, ' +
       'you must read the debrief and click on the <strong> EXIT EXPERIMENT button</strong>.' +
       'Any point will be granted by redirecting you to the SONA website.' +
-    '<br><br> Press \'p\' to continue.'],
-  choices: ['p'],
+    '<br><br> Press \'x\' to continue.'],
+  choices: ['x'],
 };
 
 // debrief
@@ -144,10 +144,10 @@ const debrief = {
   cont_btn: 'exit',
   on_start: function() {
     const results = jsPsych.data.get().filter({include: true}).csv();
-    // jatos.submitResultData(results);
-    // jatos.uploadResultFile(results, sessionCurrent + '.csv')
-    //    .then(() => console.log('File was successfully uploaded'))
-    //    .catch(() => console.log('File upload failed'));
+    jatos.submitResultData(results);
+    jatos.uploadResultFile(results, sessionCurrent + '.csv')
+        .then(() => console.log('File was successfully uploaded'))
+        .catch(() => console.log('File upload failed'));
   },
 };
 
@@ -237,7 +237,6 @@ for (var i = 0; i < trials.length; i++) {
   }
   trainingBlock.push({
     type: 'categorize-html',
-    // TODO: shape stimuli
     stimulus: ['<div class="row">' +
      '<img style="height:200px;margin:20px" src="./assets/' + symptom1 + '.png"></img>' +
      '<img style="height:200px;margin:20px" src="./assets/' + symptom2 + '.png"></img>' +
@@ -287,8 +286,8 @@ for (var i = 0; i < trials.length; i++) {
       type: 'html-keyboard-response',
       stimulus: ['<p style = "font-size:24px;line-height:2;width:600px ">' +
             'You have completed a training block. <br>Take ' +
-            'a breath and press p when you are ready to continue.</p>'],
-      choices: ['p'],
+            'a breath and press x when you are ready to continue.</p>'],
+      choices: ['x'],
     });
     blk += 1;
   }
@@ -300,9 +299,9 @@ for (var i = 0; i < trials.length; i++) {
             'option to skip the rest of the training phase and move straight ' +
             'to the test phase. If you think you need some more time, you ' +
             'can continue training and study more items.<br><br>Take ' +
-            'a breath and press p if you wish to continue, or press ' +
+            'a breath and press x if you wish to continue, or press ' +
             'enter if you wish to skip to the test phase.</p>'],
-      choices: ['p', 'enter'],
+      choices: ['x', 'enter'],
       on_finish: function(data) {
         if (data.key_press === 13) {
           jsPsych.endCurrentTimeline(); // end if backspace is pressed
@@ -356,7 +355,6 @@ for (let i = 0; i < testTrials.length; i++) {
     correct_text: '<p style="font-size:30px">Response recorded.</p>',
     incorrect_text: '<p style="font-size:30px">Response recorded.</p>',
     timeout_message: '<p style="font-size:30px">Please respond faster!</p>',
-    // TODO: fix response keys
     prompt: '<p style = "font-size:30px">' +
       'What shape do you pick for this one?<br><br><p>' +
       '<p style = "font-size:30px;text-align:left">' +
