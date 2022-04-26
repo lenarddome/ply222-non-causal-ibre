@@ -14,11 +14,11 @@
     <!--Import experiment JSPsych-->
     <script src="experiment.js"></script>
 
-    <!--JATOS-->
-    <script src="jatos.js"></script>
+    <!--JATOS    <script src="jatos.js"></script> -->
 
   </head>
   <style>
+
 .row {
   display: flex;
   flex-direction: row;
@@ -41,17 +41,18 @@
 
     var now = new Date();
     var sessionCurrent = [now.getFullYear()] + [now.getMonth()] + [now.getDate()] + [now.getHours()];
-    jatos.onLoad(function() {
+    //jatos.onLoad(function() {
       jsPsych.init({
-        timeline: [welcome, consent, creditReminder, instructionTraining,
-                   trainingPhase, instructionTest, testPhase, debrief],
+      //  timeline: [welcome, consent, creditReminder, instructionTraining,
+      //             trainingPhase, instructionTest, testPhase, debrief],
+          timeline: [instructionTest, testPhase],
         show_preload_progress_bar: true,
       on_finish: function() {
         jsPsych.data.get('csv').filter({include: true});
-        jatos.endStudyAndRedirect("https://uopsop.sona-systems.com/webstudy_credit.aspx?experiment_id=4060&credit_token=83ba322524734ec0b9b66340d64af0ce&survey_code=" + jatos.urlQueryParameters.id);
+      //  jatos.endStudyAndRedirect("https://uopsop.sona-systems.com/webstudy_credit.aspx?experiment_id=4060&credit_token=83ba322524734ec0b9b66340d64af0ce&survey_code=" + jatos.urlQueryParameters.id);
           },
        });
-    });
+    //});
   </script>
 
 </html>

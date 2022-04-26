@@ -38,9 +38,22 @@ function permute(input) {
   return permArr; // return, but this only matters in the last call
 }
 
+// create physical stimuli
+symptoms = ['square', 'circle', 'triangle', 'hexagon', 'diamond'];
+symptoms = jsPsych.randomization.shuffle(symptoms);
+
+// create html alt codes for fonts
+shapeCodes = {
+  square: '&#x23F9',
+  circle: '&#x23FA',
+  triangle: '&#x25B2',
+  hexagon: '&#x2B23',
+  diamond: '&#x25C6',
+};
+
 // key codes: 88 is X and 89 is Y key
 // first element is always common, second element is always rare
-disease_keylist = [90, 76];
+disease_keylist = [80, 81];
 disease_keylist = jsPsych.randomization.shuffle(disease_keylist);
 
 // inter-trial interval
@@ -56,15 +69,17 @@ const intertrial = {
 // instructions for training phase
 const instructionTraining = {
   type: 'html-keyboard-response',
-  stimulus: ['<p style="display:inline-block;align:center;font-size:16pt;' +
-    'width:60%"> In this phase of the experiment you will be presented with' +
-    ' statements about patients showing various symptoms and the underlying' +
-    ' fictitious disease they have - either Disease Z or Disease L. There' +
-    ' will be 5 blocks and 40 patients overall. However, you will' +
-    ' be given the opportunity to skip this phase after the 16th patient ' +
-    ' at the end of the second block.' +
-    ' You will need to press the spacebar after you studied each statement.' +
-    ' You can study each statment for 10 seconds.' +
+  stimulus: ['<p style="display:inline-block;align:center;font-size:20pt;' +
+    'width:60%"> In this phase, you will be shown various geometric shapes. ' +
+    'These shapes can either be a circle &#x23FA, a triangle &#x25B2, a ' +
+    'square &#x23F9, a hexagon &#x2B23, or a diamond &#x25C6. These shapes ' +
+    'will appear in groups of three. Your task is to study and try ' +
+    'to remember the shapes that appeared together.<br><br> You will ' +
+    'see 5 blocks of 8 shape combinations - 40 overall. However, you will ' +
+    'also be given the opportunity to skip this phase after the 16th shape ' +
+    'combination at the end of the second block.<br><br>' +
+    'You will need to press the spacebar after you studied each arrangement.' +
+    'You can study each one for 10 seconds.' +
     '</p><br>Press \'p\' to continue.'],
   choices: ['p'],
 };
@@ -72,16 +87,18 @@ const instructionTraining = {
 // instructions for test phase
 const instructionTest= {
   type: 'html-keyboard-response',
-  stimulus: ['<p style="display:inline-block;align:center;font-size:16pt;' +
+  stimulus: ['<p style="display:inline-block;align:center;font-size:20pt;' +
     'width:60%">' +
-    'Well done on completing the first phase! Now, you will begin ' +
-    'the test phase. In this phase of the experiment you will be asked to ' +
-    'identify which disease you think the person presented has got. ' +
-    'If you think the symptoms on the screen belong to Disease Z, press ' +
-    '\'Z\'. If you think the symptoms belong to Disease L, press \'L\'.</p>' +
-    '<p>This phase will have 5 blocks of 24 patients. You will have a chance' +
-    ' to rest between blocks.</p>' +
-    '<br>Press \'p\' to continue.'],
+    'Well done on completing the first phase! Now, you will begin the test ' +
+    'phase. In this phase of the experiment, you will be asked to complete ' +
+    'each combination by adding one single shape. You can either pick a ' +
+    symptoms[3] + ' ' + shapeCodes[symptoms[3]] + ' by pressing ' +
+    String.fromCharCode(disease_keylist[0]) +
+    ' or a ' + symptoms[4] + ' ' + shapeCodes[symptoms[4]] + ' by pressing ' +
+    String.fromCharCode(disease_keylist[1]) + '.<br><br> This phase will have' +
+    ' 5 blocks of 24 combinations to complete. You will have a chance' +
+    ' to rest between blocks.' +
+    '<br><br>Press \'p\' to continue.</p>'],
   choices: ['p'],
 };
 
@@ -93,15 +110,15 @@ const welcome = {
   ],
   choices: ['space'],
   on_start: function() {
-    const pptID = jatos.urlQueryParameters.id;
-    jsPsych.data.addProperties({ppt: pptID, session: sessionCurrent});
+    //const pptID = jatos.urlQueryParameters.id;
+    //jsPsych.data.addProperties({ppt: pptID, session: sessionCurrent});
   },
 };
 
 // between block rest during test
 const testRest = {
   type: 'html-keyboard-response',
-  stimulus: ['<p style = "font-size:24px;line-height:2;width:600px ">' +
+  stimulus: ['<p style = "font-size:20px;line-height:2;width:600px ">' +
         'You have completed a block. Take a breath and press \'p\' ' +
         'on the keyboard when you are ready to continue</p>',
   ],
@@ -112,7 +129,7 @@ const testRest = {
 const creditReminder = {
   type: 'html-keyboard-response',
   stimulus: ['<h1>Point Granting</h1>' +
-      '<p style="display:inline-block;align:center;font-size:16pt;' +
+      '<p style="display:inline-block;align:center;font-size:20pt;' +
       'width:60%">In order to receive the allocated points after completing the experiment, ' +
       'you must read the debrief and click on the <strong> EXIT EXPERIMENT button</strong>.' +
       'Any point will be granted by redirecting you to the SONA website.' +
@@ -127,10 +144,10 @@ const debrief = {
   cont_btn: 'exit',
   on_start: function() {
     const results = jsPsych.data.get().filter({include: true}).csv();
-    jatos.submitResultData(results);
-    jatos.uploadResultFile(results, sessionCurrent + '.csv')
-        .then(() => console.log('File was successfully uploaded'))
-        .catch(() => console.log('File upload failed'));
+    // jatos.submitResultData(results);
+    // jatos.uploadResultFile(results, sessionCurrent + '.csv')
+    //    .then(() => console.log('File was successfully uploaded'))
+    //    .catch(() => console.log('File upload failed'));
   },
 };
 
@@ -174,10 +191,6 @@ const testItems = [['A'], ['B'], ['C'], ['A'], ['B'], ['C'],
   ['C', 'A'],
   ['B', 'C'],
   ['C', 'B']];
-
-// create physical stimuli
-symptoms = ['square', 'circle', 'triangle', 'rhombus', 'pentagon'];
-symptoms = jsPsych.randomization.shuffle(symptoms);
 
 /* *******************************************
  * ********* Create training phase ***********
@@ -225,9 +238,12 @@ for (var i = 0; i < trials.length; i++) {
   trainingBlock.push({
     type: 'categorize-html',
     // TODO: shape stimuli
-    stimulus: [],
+    stimulus: ['<div class="row">' +
+     '<img style="height:200px;margin:20px" src="./assets/' + symptom1 + '.png"></img>' +
+     '<img style="height:200px;margin:20px" src="./assets/' + symptom2 + '.png"></img>' +
+     '<img style="height:200px;margin:20px" src="./assets/' + symptom3 + '.png"></img></div><br><br>'],
     choices: ['space', 'z', 'l'],
-    prompt: '<div style="margin-bottom:10px"><p style = "font-size:24px">' +
+    prompt: '<div style="margins:20px"><p style = "font-size:24px">' +
       'Press space to see the next item.' +
       '</p></div>',
     data: {
@@ -249,7 +265,7 @@ for (var i = 0; i < trials.length; i++) {
     incorrect_text: '',
     feedback_duration: 500,
     trial_duration: 5000,
-    timeout_message: '<p style = "font-size:42px">Please respond faster!</p>',
+    timeout_message: '<p style = "font-size:30px">Please respond faster!</p>',
     on_finish: function(data) {
       // decode responses into common or rare
       if (disease_keylist.indexOf(data.key_press) === 0) {
@@ -318,20 +334,21 @@ for (let i = 0; i < testTrials.length; i++) {
   if (typeof testTrials[i][1] !== 'undefined') {
     const symptom1 = symptoms[testTrials[i][0].charCodeAt(0) - 65];
     const symptom2 = symptoms[testTrials[i][1].charCodeAt(0) - 65];
-    phstim = [symptom1, symptom2];
-    // TODO: redraw stim
-    stim = [];
+    stim = ['<div class="row">' +
+      '<img style="height:200px;margin:20px" src="./assets/' + symptom1 +
+      '.png"></img>' +
+      '<img style="height:200px;margin:20px" src="./assets/' + symptom2 +
+      '.png"></img></div><br><br>']
     code = [testTrials[i][0], testTrials[i][1]];
   } else {
-    phstim = symptoms[testTrials[i][0].charCodeAt(0) - 65];
-    // TODO: redraw stim
-    stim = [];
+    const symptom1 = symptoms[testTrials[i][0].charCodeAt(0) - 65];
+    stim = ['<img style="height:200px;margin:20px" src="./assets/' + symptom1 + '.png"></img><br><br>'];
     code = [testTrials[i][0], ''];
   }
   testBlock.push({
     type: 'categorize-html',
     stimulus: stim,
-    choices: ['z', 'l'],
+    choices: ['q', 'p'],
     trial_duration: 10000,
     feedback_duration: 1000,
     show_stim_with_feedback: false,
@@ -339,8 +356,14 @@ for (let i = 0; i < testTrials.length; i++) {
     correct_text: '<p style="font-size:30px">Response recorded.</p>',
     incorrect_text: '<p style="font-size:30px">Response recorded.</p>',
     timeout_message: '<p style="font-size:30px">Please respond faster!</p>',
+    // TODO: fix response keys
     prompt: '<p style = "font-size:30px">' +
-      'Does the patient has disease Z or disease L?' +
+      'What shape do you pick for this one?<br><br><p>' +
+      '<p style = "font-size:30px;text-align:left">' +
+      symptoms[3] + ' ' + shapeCodes[symptoms[3]] + ' : ' +
+      String.fromCharCode(disease_keylist[0]) + '<br>' +
+      symptoms[4] + ' ' + shapeCodes[symptoms[4]] + ' : ' +
+      String.fromCharCode(disease_keylist[1]) + 
       '</p>',
     data: {
       symptom1: code[0],
