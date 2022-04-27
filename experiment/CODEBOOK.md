@@ -8,6 +8,7 @@ Includes a table with the variable descriptions.
 | ------------------ | --------------------------------------------------------------------------------- | --------------------- |
 | "rt"               | reaction time                                                                     | numeric               |
 | "correct"          | [always false in this experiment] correct (true) or incorrect (false) response    | boolean               |
+| "symptoms_suffle"  | the list of shuffled physical features                                            | string                |
 | "stimulus"         | the physical stimuli displayed (words of symptoms)                                | string                |
 | "key_press"        | the response key pressed                                                          | numeric JS char codes |
 | "keys"             | the counterbalanced response keys, where first is common and second is rare       | numeric JS char codes |
@@ -25,8 +26,3 @@ Includes a table with the variable descriptions.
 | "ppt"              | unique participant ID from SONA                                                   | string                |
 | "session"          | date and hour                                                                     | numeric               |
 | "abresp"           | the abstract response converted from key_press (common, rare, none)               | string                |
-
-## NOTES
-
-1.  This only affects the uploaded csv file. The unfiltered JSON file is also
-    submitted to the JATOS server.

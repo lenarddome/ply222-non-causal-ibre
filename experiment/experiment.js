@@ -16,28 +16,6 @@ var trainingCounter = [];
  * Create components of the experiment
 ******************************************* */
 
-/** permute - produce permutations of array with no repeats
- * taken from https://stackoverflow.com/a/9960925/7214634
- * @param {array} input array to be permuted
- * @return {array} all possible permutations of elements from array
- */
-function permute(input) {
-  let i; let ch;
-  for (i = 0; i < input.length; i++) { //   loop over all elements
-    ch = input.splice(i, 1)[0]; // 1. pull out each element in turn
-    usedChars.push(ch); //   push this element
-    if (input.length == 0) { // 2. if input is empty, we pushed every element
-      permArr.push(usedChars.slice()); //   so add it as a permutation
-    }
-    permute(input); // 3. compute the permutation of the smaller array
-    input.splice(i, 0, ch); // 4. add the original element to the beginning
-    //   making input the same size as when we started
-    //   but in a different order
-    usedChars.pop(); // 5. remove the element we pushed
-  }
-  return permArr; // return, but this only matters in the last call
-}
-
 // create physical stimuli
 symptoms = ['square', 'circle', 'triangle', 'hexagon', 'diamond'];
 symptoms = jsPsych.randomization.shuffle(symptoms);
@@ -69,17 +47,19 @@ const intertrial = {
 // instructions for training phase
 const instructionTraining = {
   type: 'html-keyboard-response',
-  stimulus: ['<p style="display:inline-block;line-height:2;align:center;font-size:20pt;' +
-    'width:60%"> In this phase, you will be shown various geometric shapes. ' +
-    'These shapes can either be a circle &#x23FA, a triangle &#x25B2, a ' +
-    'square &#x23F9, a hexagon &#x2B23, or a diamond &#x25C6. These shapes ' +
-    'will appear in groups of three. Your task is to study and try ' +
-    'to memorise the shapes that appeared together.<br><br>You will ' +
-    'see 5 blocks of 8 shape combinations - 40 overall. However, you will ' +
-    'also be given the opportunity to skip this phase after the 16th shape ' +
-    'combination at the end of the second block.<br><br>' +
-    'You will need to press the spacebar after you studied each combinations.' +
-    'You can study each one for 10 seconds.' +
+  stimulus: ['<p style="display:inline-block;align:center;font-size:20pt;' +
+    'width:60%"> In this phase, you will see groups of geometric shapes. ' +
+    'These shapes will appear in groups of three. These groups can be ' +
+    'various combinations of a circle &#x23FA, a triangle &#x25B2, a ' +
+    'square &#x23F9, a hexagon &#x2B23, or a diamond &#x25C6.  ' +
+    'Your task is to study and ' +
+    'to memorise the shapes that appeared together. Your memory of these ' +
+    'shapes will be tested in the second phase.<br><br>You will ' +
+    'see 5 blocks of 24 combinations - 120 overall. However, you will ' +
+    'also be given the opportunity to skip this phase after the 24th ' +
+    'combination at the end of the first block.<br><br>' +
+    'You will need to press the spacebar after you studied each ' +
+    'combinations. You can study each one for 10 seconds.' +
     '<br><br>Press \'x\' to continue.</p>'],
   choices: ['x'],
 };
@@ -87,11 +67,13 @@ const instructionTraining = {
 // instructions for test phase
 const instructionTest= {
   type: 'html-keyboard-response',
-  stimulus: ['<p style="display:inline-block;line-height:2;align:center;font-size:20pt;' +
+  stimulus: ['<p style="display:inline-block;align:center;font-size:20pt;' +
     'width:60%">' +
     'Well done on completing the first phase! Now, you will begin the test ' +
-    'phase. In this phase of the experiment, you will be asked to complete ' +
-    'each combination by adding one single shape. You can either pick a ' +
+    'phase. In this phase of the experiment, you will see either a single ' +
+    'or a pair of shapes. These are all incomplete groups. You will need to ' +
+    'complete each combination by adding one single shape.' +
+    'You can pick either a ' +
     symptoms[3] + ' ' + shapeCodes[symptoms[3]] + ' by pressing ' +
     String.fromCharCode(disease_keylist[0]) +
     ' or a ' + symptoms[4] + ' ' + shapeCodes[symptoms[4]] + ' by pressing ' +
@@ -145,7 +127,8 @@ const debrief = {
   on_start: function() {
     const results = jsPsych.data.get().filter({include: true}).csv();
     jatos.submitResultData(results);
-    jatos.uploadResultFile(results, sessionCurrent + '.csv')
+    const pptID = jatos.urlQueryParameters.id;
+    jatos.uploadResultFile(results, sessionCurrent + '_' + pptId + '.csv')
         .then(() => console.log('File was successfully uploaded'))
         .catch(() => console.log('File upload failed'));
   },
@@ -179,10 +162,26 @@ const consent = {
 
 /* Create abstract design for both training and test phases */
 
-const trainingItems = [['A', 'B', 'D'],
-  ['A', 'B', 'D'],
-  ['A', 'B', 'D'],
-  ['A', 'C', 'E']]; // training trial types
+const trainingCommonTrials = [['A', 'B', 'D'],
+  ['A', 'D', 'B'],
+  ['B', 'A', 'D'],
+  ['B', 'D', 'A'],
+  ['D', 'B', 'A'],
+  ['D', 'A', 'B']];
+
+const trainingRareTrials = [['A', 'C', 'E'],
+  ['A', 'E', 'C'],
+  ['C', 'A', 'E'],
+  ['C', 'E', 'A'],
+  ['E', 'A', 'C'],
+  ['E', 'C', 'A']];
+
+let trainingItems = [];
+trainingItems = trainingItems.concat(
+    trainingCommonTrials,
+    trainingCommonTrials,
+    trainingCommonTrials,
+    trainingRareTrials);
 
 const testItems = [['A'], ['B'], ['C'], ['A'], ['B'], ['C'],
   ['A', 'B'],
@@ -196,21 +195,12 @@ const testItems = [['A'], ['B'], ['C'], ['A'], ['B'], ['C'],
  * ********* Create training phase ***********
  ******************************************* */
 
-// permute trainingItems for counterbalancing
-for (let i = 0; i < trainingItems.length; i++) {
-  tmp = [];
-  permArr = [];
-  usedChars = [];
-  tmp = permute(trainingItems[i]);
-  trainingCounter.push(tmp);
-}
-
 // combine training blocks (randomize within blocks)
-trials = trials.concat(jsPsych.randomization.shuffle(trainingCounter.flat()),
-    jsPsych.randomization.shuffle(trainingCounter.flat()),
-    jsPsych.randomization.shuffle(trainingCounter.flat()),
-    jsPsych.randomization.shuffle(trainingCounter.flat()),
-    jsPsych.randomization.shuffle(trainingCounter.flat()));
+trials = trials.concat(jsPsych.randomization.shuffle(trainingItems),
+    jsPsych.randomization.shuffle(trainingItems),
+    jsPsych.randomization.shuffle(trainingItems),
+    jsPsych.randomization.shuffle(trainingItems),
+    jsPsych.randomization.shuffle(trainingItems));
 
 
 // combine test blocks (randomize within blocks)
@@ -278,20 +268,11 @@ for (var i = 0; i < trials.length; i++) {
       if (data.key_press === 8) {
         jsPsych.endCurrentTimeline(); // end if backspace is pressed
       }
+      console.log(data.trial);
     },
   });
   trainingBlock.push(intertrial); // intertrial interval
-  if (i > 1 && i < 8 && (i + 1) % 8 === 0) {
-    trainingBlock.push({
-      type: 'html-keyboard-response',
-      stimulus: ['<p style = "font-size:24px;line-height:2;width:600px ">' +
-            'You have completed a training block. <br>Take ' +
-            'a breath and press x when you are ready to continue.</p>'],
-      choices: ['x'],
-    });
-    blk += 1;
-  }
-  if (i > 1 && i > 8 && (i + 1) % 8 === 0) {
+  if (i > 1 && (i + 1) % 24 === 0) {
     trainingBlock.push({
       type: 'html-keyboard-response',
       stimulus: ['<p style = "font-size:24px;line-height:2;width:800px ">' +
@@ -318,6 +299,7 @@ const trainingPhase = {
   timeline: trainingBlock,
   data: {
     keys: disease_keylist,
+    symptoms_shuffle: symptoms
   },
 };
 
@@ -327,6 +309,7 @@ const trainingPhase = {
 
 // compile test phase array with all trials
 for (let i = 0; i < testTrials.length; i++) {
+  blk = 1;
   let stim = [];
   let phstim = [];
   let code = [];
@@ -338,10 +321,12 @@ for (let i = 0; i < testTrials.length; i++) {
       '.png"></img>' +
       '<img style="height:200px;margin:20px" src="./assets/' + symptom2 +
       '.png"></img></div><br><br>']
+    phstim = [symptom1, symptom2];
     code = [testTrials[i][0], testTrials[i][1]];
   } else {
     const symptom1 = symptoms[testTrials[i][0].charCodeAt(0) - 65];
     stim = ['<img style="height:200px;margin:20px" src="./assets/' + symptom1 + '.png"></img><br><br>'];
+    phstim = [symptom1];
     code = [testTrials[i][0], ''];
   }
   testBlock.push({
@@ -361,7 +346,7 @@ for (let i = 0; i < testTrials.length; i++) {
       symptoms[3] + ' ' + shapeCodes[symptoms[3]] + ' : ' +
       String.fromCharCode(disease_keylist[0]) + '<br>' +
       symptoms[4] + ' ' + shapeCodes[symptoms[4]] + ' : ' +
-      String.fromCharCode(disease_keylist[1]) + 
+      String.fromCharCode(disease_keylist[1]) +
       '</p>',
     data: {
       symptom1: code[0],
@@ -370,6 +355,7 @@ for (let i = 0; i < testTrials.length; i++) {
       phase: 'test',
       trial: i + 1,
       include: true,
+      block: blk,
     },
     on_finish: function(data) {
       if (disease_keylist.indexOf(data.key_press) === 0) {
@@ -386,6 +372,7 @@ for (let i = 0; i < testTrials.length; i++) {
   // have a rest after each block
   if (i > 1 && (i + 1) % 24 === 0) {
     testBlock.push(testRest);
+    blk += 1;
   }
 }
 
@@ -395,5 +382,6 @@ const testPhase = {
   timeline: testBlock,
   data: {
     keys: disease_keylist,
+    symptoms_shuffle: symptoms,
   },
 };
