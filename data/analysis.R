@@ -223,7 +223,7 @@ pfreq <- ggplot(freq_pat, aes(x = as.numeric(i1), y = N, fill = pattern)) +
 ggsave(pfreq, filename = "freq.pdf", width = 12)
 
 ## undirected graph
-dat <- melt(data.table(most4[[1]], keep.rownames = TRUE))
+dat <- melt(data.table(most3[[1]], keep.rownames = TRUE))
 colnames(dat) <- c("from", "to", "weight")
 adj_matrix <- graph.data.frame(dat[!is.na(weight)], directed = TRUE)
 
@@ -237,9 +237,9 @@ colors[colors == -1] <- palette[2]
 
 ## very clumsy way of sorting vertex names
 ## convert it to factors then to numeric
-sorting <- as.numeric(as.factor(HUMAN_4_order[ppt == names(most4)]$stim))
+sorting <- as.numeric(as.factor(HUMAN_3_order[ppt == names(most3)]$stim))
 ## sort based on numeric first
-order <- HUMAN_4_order[ppt == names(most4)][sorting]
+order <- HUMAN_3_order[ppt == names(most3)][sorting]
 ## order names according to successes and then convert factors to numeric
 lay <- as.numeric(as.factor(order$stim[order(as.numeric(order$success))]))
 CairoPDF("plot.pdf", 10, 10)
