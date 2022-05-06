@@ -36,19 +36,22 @@ levels(dta$abstim) <- decode
 table(dta$abstim[dta$phase == "training"])
 table(dta$abstim[dta$phase == "test"])
 
-## exlclude the first participant
-dta <- dta[dta$ppt %in%  unique(dta$ppt)[-1], ]
-dta <- as.data.table(dta)
+dta <- data.table(dta)
 
-## training accuracy
-dta[, blk := as.integer((trial - 1) / 8) + 1]
+## exlclude the first participant
+reaction <- dta[, .(rt = mean(as.numeric(rt), na.rm = TRUE),
+                    sd = sd(as.numeric(rt),na.rm = TRUE)), by = ppt]
+reaction[, .(mean(rt), sd(rt))]
+reaction[, min(rt)]
+exclusion <- reaction[order(rt)][1:3, ]$ppt
 
 ## test phase
-tdta <- dta[phase == "test", .N, by = .(ppt, abstim, abresp)]
+tdta <- dta[phase == "test" & !(ppt %in% exclusion),
+            .N, by = .(ppt, abstim, abresp)]
 tdta[, prob := N / 20]
 
 group <- tdta[abresp != "none",
-              list(prob = sum(prob) / length(unique(dta$ppt))),
+              list(prob = sum(prob) / length(unique(tdta$ppt))),
               by = .(abstim, abresp)][order(abstim, abresp)]
 colnames(group) <-  c("stim", "resp", "prob")
 knitr::kable(dcast(formula = stim ~ resp, data = data.table(group)),
@@ -223,7 +226,7 @@ pfreq <- ggplot(freq_pat, aes(x = as.numeric(i1), y = N, fill = pattern)) +
 ggsave(pfreq, filename = "freq.pdf", width = 12)
 
 ## undirected graph
-dat <- melt(data.table(most3[[1]], keep.rownames = TRUE))
+dat <- melt(data.table(most4[[1]], keep.rownames = TRUE))
 colnames(dat) <- c("from", "to", "weight")
 adj_matrix <- graph.data.frame(dat[!is.na(weight)], directed = TRUE)
 
@@ -237,9 +240,9 @@ colors[colors == -1] <- palette[2]
 
 ## very clumsy way of sorting vertex names
 ## convert it to factors then to numeric
-sorting <- as.numeric(as.factor(HUMAN_3_order[ppt == names(most3)]$stim))
+sorting <- as.numeric(as.factor(HUMAN_4_order[ppt == names(most4)]$stim))
 ## sort based on numeric first
-order <- HUMAN_3_order[ppt == names(most3)][sorting]
+order <- HUMAN_4_order[ppt == names(most4)][sorting]
 ## order names according to successes and then convert factors to numeric
 lay <- as.numeric(as.factor(order$stim[order(as.numeric(order$success))]))
 CairoPDF("plot.pdf", 10, 10)
