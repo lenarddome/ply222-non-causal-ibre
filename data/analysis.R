@@ -84,6 +84,23 @@ bc[is.na(bc)] <- 0
 bc_bayes <- ttestBF(x = bc$prob.rare, mu = 0.5)
 papaja::apa_print(bc_bayes)$full_result
 
+## stimuli A
+
+## IBRE
+aa <- tdta[abstim == "A" & abresp != "none" & (ppt %in% inclusion_memory)]
+# long to wide conversion
+aa <- merge(x = aa[abresp == "rare", c(1, 2, 5)],
+            y = aa[abresp == "common", c(1, 2, 5)],
+            by = c("ppt", "abstim"), all = TRUE,
+            suffixes = c(".rare", ".common"))
+
+# no responses are turned to NA, so swap it to 0
+aa[is.na(aa)] <- 0
+
+# find posterior distribution for the difference
+aa_bayes <- ttestBF(x = aa$prob.common, mu = 0.5)
+papaja::apa_print(aa_bayes)$full_result
+
 # predictive cues are judged faster
 # ambiguous stimuli takes longer to sort on average
 dta$rt <- as.numeric(dta$rt)
