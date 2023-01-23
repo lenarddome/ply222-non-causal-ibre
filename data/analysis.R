@@ -14,7 +14,6 @@ foo <- lapply(fname, fread) # import all
 dta <- do.call(plyr::rbind.fill, foo)
 
 ## decode responses
-
 dta$abstim <- NULL
 dta$abstim <- as.factor(paste(dta$symptom1, dta$symptom2, dta$symptom3, sep = ""))
 
@@ -28,13 +27,13 @@ print("Visually inspect that everything is in order! Below:")
 print(cbind(levels(dta$abstim), decode))
 levels(dta$abstim) <- decode
 
-## double check stim dist during test
+## double check stim frequency during test
 table(dta$abstim[dta$phase == "training"])
 table(dta$abstim[dta$phase == "test"])
 
 dta <- data.table(dta)
 
-## exlclude the first participant
+## excude participants whose mean reaction time is way too low
 reaction <- dta[, .(rt = mean(as.numeric(rt), na.rm = TRUE),
                     sd = sd(as.numeric(rt),na.rm = TRUE)), by = ppt]
 reaction[, .(mean(rt), sd(rt))]
@@ -42,15 +41,14 @@ reaction[, min(rt)]
 exclusion <- reaction[order(rt) & rt < (mean(rt) - sd(rt))]
 
 ## test phase
-tdta <- dta[phase == "test" & !(ppt %in% exclusion),
-            .N, by = .(ppt, abstim, abresp)]
+tdta <- dta[phase == "test" & !(ppt %in% exclusion), .N, by = .(ppt, abstim, abresp)]
 tdta[, prob := N / 20]
 
-
 ### determine threshold for exclusion on training items
-# BayesFactor::proportionBF(y = 14, N = 20, p = 0.5)
-BayesianFirstAid::bayes.prop.test(x = 12, n = 20)
+BayesFactor::proportionBF(y = 15, N = 20, p = 0.5)
 
+## Exclude participants whose performance on training items during test
+## were below 0.75 (see proportionBF for this threshold)
 inclusion_memory_common <-
     tdta[abstim == 'AB' & abresp == 'common', prob >= 0.75, by = ppt]
 include <- inclusion_memory_common[V1 == TRUE]$ppt
@@ -59,9 +57,10 @@ inclusion_memory_rare <-
     tdta[abstim == 'AC' & abresp == 'rare', prob >= 0.75, by = ppt]
 include2 <- inclusion_memory_rare[V1 == TRUE]$ppt
 
-
+## subset
 inclusion_memory <- include[include %in% include2]
 
+## create latex table
 group <- tdta[abresp != "none" & ppt %in% inclusion_memory,
               list(prob = sum(prob) / length(unique(inclusion_memory))),
               by = .(abstim, abresp)][order(abstim, abresp)]
