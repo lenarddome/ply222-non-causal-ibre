@@ -33,15 +33,8 @@ table(dta$abstim[dta$phase == "test"])
 
 dta <- data.table(dta)
 
-## excude participants whose mean reaction time is way too low
-reaction <- dta[, .(rt = mean(as.numeric(rt), na.rm = TRUE),
-                    sd = sd(as.numeric(rt),na.rm = TRUE)), by = ppt]
-reaction[, .(mean(rt), sd(rt))]
-reaction[, min(rt)]
-exclusion <- reaction[order(rt) & rt < (mean(rt) - sd(rt))]
-
 ## test phase
-tdta <- dta[phase == "test" & !(ppt %in% exclusion), .N, by = .(ppt, abstim, abresp)]
+tdta <- dta[phase == "test", .N, by = .(ppt, abstim, abresp)]
 tdta[, prob := N / 20]
 
 ### determine threshold for exclusion on training items
