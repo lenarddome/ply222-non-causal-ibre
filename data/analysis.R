@@ -102,9 +102,10 @@ wbetwe <- dta[abresp != "none" & phase == "test", .(rt, abresp, ppt, abstim)]
 
 wbetwe[, .(mean = mean(rt)), by = .(abstim, abresp)][order(mean)]
 
-bc_group <- ggplot(tdta[abresp == 'rare'], aes(x = abstim, y = prob, fill = abstim)) +
-    geom_jitter(alpha = 0.1, size = 0.8, width = 0.2) +
+bc_group <- ggplot(tdta[abresp == 'rare' & (ppt %in% inclusion_memory) & abstim %in% c("A", "BC")],
+                   aes(x = abstim, y = prob, fill = abstim)) +
     stat_histinterval(p_limits = c(0, 1)) +
+    geom_jitter(alpha = 0.5, size = 0.8, width = 0.2) +
     geom_boxplot(aes(fill = NULL), outlier.colour = NA, width = 0.125) +
     #scale_fill_tq() +
     scale_fill_calc(name = "Stimuli") +
@@ -112,4 +113,4 @@ bc_group <- ggplot(tdta[abresp == 'rare'], aes(x = abstim, y = prob, fill = abst
     labs(x = "Test Items", y = "P(R|Stimulus)") +
     theme(legend.position = "bottom")
 
-ggsave(bc_group, width = 10, height = 5, units = "in", filename = "group.pdf")
+ggsave(bc_group, width = 5, height = 5, units = "in", filename = "group.jpg")
