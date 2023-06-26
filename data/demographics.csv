@@ -1,71 +1,185 @@
-,,,,,,,,,,
-survey_id,age,occur_date,date_granted,signup_date,link_click_date,location,credit_type,show_credit,penalty_credit,comments
-23218,22.17,4 May 2022 09:00,29 April 2022 11:04,29 April 2022 10:57,29 April 2022 10:58,Online,Participated,0,0,0.50 Points archived record
-23221,21.36,4 May 2022 09:00,29 April 2022 11:34,29 April 2022 11:27,29 April 2022 11:27,Online,Participated,0,0,0.50 Points archived record
-24224,20.76,4 May 2022 09:00,29 April 2022 14:58,29 April 2022 11:00,29 April 2022 14:48,Online,Participated,0,0,0.50 Points archived record
-24248,21.02,4 May 2022 09:00,6 May 2022 10:54,29 April 2022 11:00,,Online,No-Show (Excused),0,0,No-Show archived record
-23272,25.79,4 May 2022 09:00,6 May 2022 10:54,29 April 2022 11:02,3 May 2022 15:37,Online,No-Show (Excused),0,0,No-Show archived record
-24472,20.09,4 May 2022 09:00,29 April 2022 11:41,29 April 2022 11:23,29 April 2022 11:31,Online,Participated,0,0,0.50 Points archived record
-23303,22.68,4 May 2022 09:00,4 May 2022 08:31,29 April 2022 10:57,4 May 2022 08:20,Online,Participated,0,0,0.50 Points archived record
-23352,21.19,4 May 2022 09:00,29 April 2022 11:21,29 April 2022 11:13,29 April 2022 11:13,Online,Participated,0,0,0.50 Points archived record
-23321,22.63,4 May 2022 09:00,29 April 2022 11:35,29 April 2022 11:25,29 April 2022 11:26,Online,Participated,0,0,0.50 Points archived record
-23210,21.69,6 May 2022 09:15,29 April 2022 20:47,29 April 2022 20:39,29 April 2022 20:39,Online,Participated,0,0,0.50 Points archived record
-23212,20.92,6 May 2022 09:15,6 May 2022 10:55,5 May 2022 14:29,,Online,No-Show (Excused),0,0,No-Show archived record
-24192,20.18,6 May 2022 09:15,30 April 2022 15:44,30 April 2022 15:35,30 April 2022 15:35,Online,Participated,0,0,0.50 Points archived record
-24193,20.27,6 May 2022 09:15,6 May 2022 10:55,2 May 2022 18:22,,Online,No-Show (Excused),0,0,No-Show archived record
-23214,21.25,6 May 2022 09:15,3 May 2022 11:20,3 May 2022 11:08,3 May 2022 11:08,Online,Participated,0,0,0.50 Points archived record
-24194,19.93,6 May 2022 09:15,4 May 2022 10:48,4 May 2022 10:39,4 May 2022 10:39,Online,Participated,0,0,0.50 Points archived record
-23219,21.55,6 May 2022 09:15,3 May 2022 16:43,1 May 2022 23:23,3 May 2022 16:35,Online,Participated,0,0,0.50 Points archived record
-23356,22.5,6 May 2022 09:15,4 May 2022 13:02,4 May 2022 12:54,4 May 2022 12:54,Online,Participated,0,0,0.50 Points archived record
-24197,20.02,6 May 2022 09:15,29 April 2022 12:27,29 April 2022 12:18,29 April 2022 12:18,Online,Participated,0,0,0.50 Points archived record
-24204,21.1,6 May 2022 09:15,29 April 2022 17:05,29 April 2022 16:54,29 April 2022 16:54,Online,Participated,0,0,0.50 Points archived record
-23611,21.06,6 May 2022 09:15,30 April 2022 00:27,29 April 2022 18:11,30 April 2022 00:21,Online,Participated,0,0,0.50 Points archived record
-24125,20.31,6 May 2022 09:15,1 May 2022 13:03,1 May 2022 12:56,1 May 2022 12:57,Online,Participated,0,0,0.50 Points archived record
-23527,24.58,6 May 2022 09:15,5 May 2022 22:00,5 May 2022 10:15,5 May 2022 10:18,Online,Participated,0,0,0.50 Points archived record
-24232,20.29,6 May 2022 09:15,5 May 2022 14:01,4 May 2022 10:43,4 May 2022 10:43,Online,Participated,0,0,0.50 Points archived record
-23477,22.45,6 May 2022 09:15,4 May 2022 18:23,30 April 2022 23:24,30 April 2022 23:25,Online,Participated,0,0,0.50 Points archived record
-23336,21.08,6 May 2022 09:15,3 May 2022 21:20,30 April 2022 15:03,3 May 2022 21:04,Online,Participated,0,0,0.50 Points archived record
-24247,20.71,6 May 2022 09:15,1 May 2022 21:31,1 May 2022 21:20,1 May 2022 21:20,Online,Participated,0,0,0.50 Points archived record
-23242,28.65,6 May 2022 09:15,29 April 2022 16:36,29 April 2022 16:25,29 April 2022 16:25,Online,Participated,0,0,0.50 Points archived record
-24448,21.82,6 May 2022 09:15,1 May 2022 22:46,1 May 2022 22:37,1 May 2022 22:37,Online,Participated,0,0,0.50 Points archived record
-24264,20.38,6 May 2022 09:15,5 May 2022 10:10,5 May 2022 10:02,5 May 2022 10:03,Online,Participated,0,0,0.50 Points archived record
-23245,21.88,6 May 2022 09:15,6 May 2022 01:20,1 May 2022 00:23,6 May 2022 01:11,Online,Participated,0,0,0.50 Points archived record
-24268,33.65,6 May 2022 09:15,6 May 2022 10:55,29 April 2022 20:20,29 April 2022 20:20,Online,No-Show (Excused),0,0,No-Show archived record
-23614,27.51,6 May 2022 09:15,5 May 2022 21:30,2 May 2022 13:37,5 May 2022 21:20,Online,Participated,0,0,0.50 Points archived record
-22677,29.15,6 May 2022 09:15,6 May 2022 10:55,3 May 2022 16:19,,Online,No-Show (Excused),0,0,No-Show archived record
-23479,27.96,6 May 2022 09:15,5 May 2022 19:53,30 April 2022 22:09,5 May 2022 19:44,Online,Participated,0,0,0.50 Points archived record
-24277,21.51,6 May 2022 09:15,6 May 2022 10:55,2 May 2022 14:27,2 May 2022 14:27,Online,No-Show (Excused),0,0,No-Show archived record
-23248,20.83,6 May 2022 09:15,5 May 2022 17:59,1 May 2022 11:13,1 May 2022 11:13,Online,Participated,0,0,0.50 Points archived record
-23490,21.87,6 May 2022 09:15,4 May 2022 12:46,1 May 2022 13:21,4 May 2022 12:35,Online,Participated,0,0,0.50 Points archived record
-23337,21.86,6 May 2022 09:15,6 May 2022 10:55,3 May 2022 12:27,,Online,No-Show (Excused),0,0,No-Show archived record
-24290,20.65,6 May 2022 09:15,3 May 2022 19:14,3 May 2022 19:04,3 May 2022 19:04,Online,Participated,0,0,0.50 Points archived record
-24294,19.89,6 May 2022 09:15,6 May 2022 10:55,3 May 2022 12:33,,Online,No-Show (Excused),0,0,No-Show archived record
-23262,21.11,6 May 2022 09:15,29 April 2022 17:24,29 April 2022 17:16,29 April 2022 17:16,Online,Participated,0,0,0.50 Points archived record
-24299,20.36,6 May 2022 09:15,30 April 2022 14:21,30 April 2022 14:10,30 April 2022 14:10,Online,Participated,0,0,0.50 Points archived record
-23468,21.51,6 May 2022 09:15,29 April 2022 13:19,29 April 2022 13:07,29 April 2022 13:08,Online,Participated,0,0,0.50 Points archived record
-23276,49.91,6 May 2022 09:15,6 May 2022 00:17,29 April 2022 21:31,6 May 2022 00:07,Online,Participated,0,0,0.50 Points archived record
-23279,20.76,6 May 2022 09:15,3 May 2022 14:23,2 May 2022 21:06,3 May 2022 13:42,Online,Participated,0,0,0.50 Points archived record
-23472,21.29,6 May 2022 09:15,1 May 2022 13:11,1 May 2022 12:58,1 May 2022 12:58,Online,Participated,0,0,0.50 Points archived record
-24321,22.09,6 May 2022 09:15,5 May 2022 11:39,5 May 2022 11:31,5 May 2022 11:31,Online,Participated,0,0,0.50 Points archived record
-23283,20.85,6 May 2022 09:15,30 April 2022 14:07,30 April 2022 13:55,30 April 2022 13:58,Online,Participated,0,0,0.50 Points archived record
-24324,19.75,6 May 2022 09:15,4 May 2022 22:54,4 May 2022 22:41,4 May 2022 22:41,Online,Participated,0,0,0.50 Points archived record
-23284,21.29,6 May 2022 09:15,5 May 2022 17:11,30 April 2022 14:47,5 May 2022 17:03,Online,Participated,0,0,0.50 Points archived record
-23285,20.88,6 May 2022 09:15,1 May 2022 15:35,1 May 2022 15:27,1 May 2022 15:29,Online,Participated,0,0,0.50 Points archived record
-24151,20.87,6 May 2022 09:15,2 May 2022 21:23,2 May 2022 21:12,2 May 2022 21:13,Online,Participated,0,0,0.50 Points archived record
-23296,21.15,6 May 2022 09:15,6 May 2022 05:34,4 May 2022 08:18,6 May 2022 05:25,Online,Participated,0,0,0.50 Points archived record
-23298,22.62,6 May 2022 09:15,3 May 2022 22:08,3 May 2022 21:55,3 May 2022 21:55,Online,Participated,0,0,0.50 Points archived record
-24344,19.99,6 May 2022 09:15,2 May 2022 17:22,30 April 2022 12:37,2 May 2022 17:11,Online,Participated,0,0,0.50 Points archived record
-23532,2.98,6 May 2022 09:15,3 May 2022 20:13,3 May 2022 19:10,3 May 2022 19:10,Online,Participated,0,0,0.50 Points archived record
-24351,23.29,6 May 2022 09:15,6 May 2022 08:52,1 May 2022 23:10,6 May 2022 08:42,Online,Participated,0,0,0.50 Points archived record
-24355,20.49,6 May 2022 09:15,5 May 2022 22:00,29 April 2022 12:31,5 May 2022 21:35,Online,Participated,0,0,0.50 Points archived record
-24153,35.46,6 May 2022 09:15,4 May 2022 18:30,4 May 2022 18:20,4 May 2022 18:22,Online,Participated,0,0,0.50 Points archived record
-23305,21.96,6 May 2022 09:15,5 May 2022 13:26,1 May 2022 02:04,5 May 2022 13:16,Online,Participated,0,0,0.50 Points archived record
-24359,19.79,6 May 2022 09:15,4 May 2022 14:34,4 May 2022 14:16,4 May 2022 14:16,Online,Participated,0,0,0.50 Points archived record
-24361,20.76,6 May 2022 09:15,1 May 2022 14:47,1 May 2022 14:41,1 May 2022 14:41,Online,Participated,0,0,0.50 Points archived record
-23349,21.92,6 May 2022 09:15,6 May 2022 10:55,4 May 2022 00:09,,Online,No-Show (Excused),0,0,No-Show archived record
-24157,20.73,6 May 2022 09:15,6 May 2022 00:16,2 May 2022 18:05,6 May 2022 00:07,Online,Participated,0,0,0.50 Points archived record
-24371,21.52,6 May 2022 09:15,1 May 2022 20:27,1 May 2022 20:16,1 May 2022 20:16,Online,Participated,0,0,0.50 Points archived record
-23474,21.18,6 May 2022 09:15,5 May 2022 21:33,29 April 2022 13:39,5 May 2022 21:21,Online,Participated,0,0,0.50 Points archived record
-23315,31.96,6 May 2022 09:15,5 May 2022 22:03,1 May 2022 15:18,5 May 2022 21:54,Online,Participated,0,0,0.50 Points archived record
-23316,21.26,6 May 2022 09:15,29 April 2022 14:02,29 April 2022 13:52,29 April 2022 13:52,Online,Participated,0,0,0.50 Points archived record
-23327,21.42,6 May 2022 09:15,29 April 2022 16:46,29 April 2022 16:27,29 April 2022 16:27,Online,Participated,0,0,0.50 Points archived record
+,,,,,,,
+survey_id,age,occur_date,date_granted,signup_date,link_click_date,location,credit_type
+23218,22.17,4 May 2022 09:00,29 April 2022 11:04,29 April 2022 10:57,29 April 2022 10:58,Online,Participated
+23221,21.36,4 May 2022 09:00,29 April 2022 11:34,29 April 2022 11:27,29 April 2022 11:27,Online,Participated
+24224,20.76,4 May 2022 09:00,29 April 2022 14:58,29 April 2022 11:00,29 April 2022 14:48,Online,Participated
+24472,20.09,4 May 2022 09:00,29 April 2022 11:41,29 April 2022 11:23,29 April 2022 11:31,Online,Participated
+23303,22.68,4 May 2022 09:00,4 May 2022 08:31,29 April 2022 10:57,4 May 2022 08:20,Online,Participated
+23352,21.19,4 May 2022 09:00,29 April 2022 11:21,29 April 2022 11:13,29 April 2022 11:13,Online,Participated
+23321,22.63,4 May 2022 09:00,29 April 2022 11:35,29 April 2022 11:25,29 April 2022 11:26,Online,Participated
+23210,21.69,6 May 2022 09:15,29 April 2022 20:47,29 April 2022 20:39,29 April 2022 20:39,Online,Participated
+24192,20.18,6 May 2022 09:15,30 April 2022 15:44,30 April 2022 15:35,30 April 2022 15:35,Online,Participated
+23214,21.25,6 May 2022 09:15,3 May 2022 11:20,3 May 2022 11:08,3 May 2022 11:08,Online,Participated
+24194,19.93,6 May 2022 09:15,4 May 2022 10:48,4 May 2022 10:39,4 May 2022 10:39,Online,Participated
+23219,21.55,6 May 2022 09:15,3 May 2022 16:43,1 May 2022 23:23,3 May 2022 16:35,Online,Participated
+23356,22.5,6 May 2022 09:15,4 May 2022 13:02,4 May 2022 12:54,4 May 2022 12:54,Online,Participated
+24197,20.02,6 May 2022 09:15,29 April 2022 12:27,29 April 2022 12:18,29 April 2022 12:18,Online,Participated
+24204,21.1,6 May 2022 09:15,29 April 2022 17:05,29 April 2022 16:54,29 April 2022 16:54,Online,Participated
+23611,21.06,6 May 2022 09:15,30 April 2022 00:27,29 April 2022 18:11,30 April 2022 00:21,Online,Participated
+24125,20.31,6 May 2022 09:15,1 May 2022 13:03,1 May 2022 12:56,1 May 2022 12:57,Online,Participated
+23527,24.58,6 May 2022 09:15,5 May 2022 22:00,5 May 2022 10:15,5 May 2022 10:18,Online,Participated
+24232,20.29,6 May 2022 09:15,5 May 2022 14:01,4 May 2022 10:43,4 May 2022 10:43,Online,Participated
+23477,22.45,6 May 2022 09:15,4 May 2022 18:23,30 April 2022 23:24,30 April 2022 23:25,Online,Participated
+23336,21.08,6 May 2022 09:15,3 May 2022 21:20,30 April 2022 15:03,3 May 2022 21:04,Online,Participated
+24247,20.71,6 May 2022 09:15,1 May 2022 21:31,1 May 2022 21:20,1 May 2022 21:20,Online,Participated
+23242,28.65,6 May 2022 09:15,29 April 2022 16:36,29 April 2022 16:25,29 April 2022 16:25,Online,Participated
+24448,21.82,6 May 2022 09:15,1 May 2022 22:46,1 May 2022 22:37,1 May 2022 22:37,Online,Participated
+24264,20.38,6 May 2022 09:15,5 May 2022 10:10,5 May 2022 10:02,5 May 2022 10:03,Online,Participated
+23245,21.88,6 May 2022 09:15,6 May 2022 01:20,1 May 2022 00:23,6 May 2022 01:11,Online,Participated
+23614,27.51,6 May 2022 09:15,5 May 2022 21:30,2 May 2022 13:37,5 May 2022 21:20,Online,Participated
+23479,27.96,6 May 2022 09:15,5 May 2022 19:53,30 April 2022 22:09,5 May 2022 19:44,Online,Participated
+23248,20.83,6 May 2022 09:15,5 May 2022 17:59,1 May 2022 11:13,1 May 2022 11:13,Online,Participated
+23490,21.87,6 May 2022 09:15,4 May 2022 12:46,1 May 2022 13:21,4 May 2022 12:35,Online,Participated
+24290,20.65,6 May 2022 09:15,3 May 2022 19:14,3 May 2022 19:04,3 May 2022 19:04,Online,Participated
+23262,21.11,6 May 2022 09:15,29 April 2022 17:24,29 April 2022 17:16,29 April 2022 17:16,Online,Participated
+24299,20.36,6 May 2022 09:15,30 April 2022 14:21,30 April 2022 14:10,30 April 2022 14:10,Online,Participated
+23468,21.51,6 May 2022 09:15,29 April 2022 13:19,29 April 2022 13:07,29 April 2022 13:08,Online,Participated
+23276,49.91,6 May 2022 09:15,6 May 2022 00:17,29 April 2022 21:31,6 May 2022 00:07,Online,Participated
+23279,20.76,6 May 2022 09:15,3 May 2022 14:23,2 May 2022 21:06,3 May 2022 13:42,Online,Participated
+23472,21.29,6 May 2022 09:15,1 May 2022 13:11,1 May 2022 12:58,1 May 2022 12:58,Online,Participated
+24321,22.09,6 May 2022 09:15,5 May 2022 11:39,5 May 2022 11:31,5 May 2022 11:31,Online,Participated
+23283,20.85,6 May 2022 09:15,30 April 2022 14:07,30 April 2022 13:55,30 April 2022 13:58,Online,Participated
+24324,19.75,6 May 2022 09:15,4 May 2022 22:54,4 May 2022 22:41,4 May 2022 22:41,Online,Participated
+23284,21.29,6 May 2022 09:15,5 May 2022 17:11,30 April 2022 14:47,5 May 2022 17:03,Online,Participated
+23285,20.88,6 May 2022 09:15,1 May 2022 15:35,1 May 2022 15:27,1 May 2022 15:29,Online,Participated
+24151,20.87,6 May 2022 09:15,2 May 2022 21:23,2 May 2022 21:12,2 May 2022 21:13,Online,Participated
+23296,21.15,6 May 2022 09:15,6 May 2022 05:34,4 May 2022 08:18,6 May 2022 05:25,Online,Participated
+23298,22.62,6 May 2022 09:15,3 May 2022 22:08,3 May 2022 21:55,3 May 2022 21:55,Online,Participated
+24344,19.99,6 May 2022 09:15,2 May 2022 17:22,30 April 2022 12:37,2 May 2022 17:11,Online,Participated
+23532,2.98,6 May 2022 09:15,3 May 2022 20:13,3 May 2022 19:10,3 May 2022 19:10,Online,Participated
+24351,23.29,6 May 2022 09:15,6 May 2022 08:52,1 May 2022 23:10,6 May 2022 08:42,Online,Participated
+24355,20.49,6 May 2022 09:15,5 May 2022 22:00,29 April 2022 12:31,5 May 2022 21:35,Online,Participated
+24153,35.46,6 May 2022 09:15,4 May 2022 18:30,4 May 2022 18:20,4 May 2022 18:22,Online,Participated
+23305,21.96,6 May 2022 09:15,5 May 2022 13:26,1 May 2022 02:04,5 May 2022 13:16,Online,Participated
+24359,19.79,6 May 2022 09:15,4 May 2022 14:34,4 May 2022 14:16,4 May 2022 14:16,Online,Participated
+24361,20.76,6 May 2022 09:15,1 May 2022 14:47,1 May 2022 14:41,1 May 2022 14:41,Online,Participated
+24157,20.73,6 May 2022 09:15,6 May 2022 00:16,2 May 2022 18:05,6 May 2022 00:07,Online,Participated
+24371,21.52,6 May 2022 09:15,1 May 2022 20:27,1 May 2022 20:16,1 May 2022 20:16,Online,Participated
+23474,21.18,6 May 2022 09:15,5 May 2022 21:33,29 April 2022 13:39,5 May 2022 21:21,Online,Participated
+23315,31.96,6 May 2022 09:15,5 May 2022 22:03,1 May 2022 15:18,5 May 2022 21:54,Online,Participated
+23316,21.26,6 May 2022 09:15,29 April 2022 14:02,29 April 2022 13:52,29 April 2022 13:52,Online,Participated
+23327,21.42,6 May 2022 09:15,29 April 2022 16:46,29 April 2022 16:27,29 April 2022 16:27,Online,Participated
+24131,19.93,18 January 2023 09:00,13 January 2023 18:45,13 January 2023 16:40,13 January 2023 16:41,Online,Participated
+25272,18.96,18 January 2023 09:00,13 January 2023 17:29,13 January 2023 17:17,13 January 2023 17:17,Online,Participated
+24265,20.25,18 January 2023 09:00,13 January 2023 16:58,13 January 2023 16:46,13 January 2023 16:46,Online,Participated
+24295,20.57,18 January 2023 09:00,14 January 2023 22:47,13 January 2023 17:02,14 January 2023 22:40,Online,Participated
+25316,19.55,18 January 2023 09:00,13 January 2023 17:28,13 January 2023 17:17,13 January 2023 17:17,Online,Participated
+24318,24.09,18 January 2023 09:00,13 January 2023 17:23,13 January 2023 17:11,13 January 2023 17:11,Online,Participated
+25337,20.61,18 January 2023 09:00,13 January 2023 17:02,13 January 2023 16:50,13 January 2023 16:50,Online,Participated
+24330,24.78,18 January 2023 09:00,13 January 2023 17:30,13 January 2023 16:35,13 January 2023 16:35,Online,Participated
+25750,18.88,18 January 2023 09:00,14 January 2023 12:28,13 January 2023 16:10,13 January 2023 16:10,Online,Participated
+25368,20.43,18 January 2023 09:00,17 January 2023 18:14,13 January 2023 16:46,17 January 2023 18:05,Online,Participated
+25188,20.25,19 January 2023 09:15,17 January 2023 00:35,16 January 2023 13:15,17 January 2023 00:26,Online,Participated
+25189,20.24,19 January 2023 09:15,18 January 2023 17:33,17 January 2023 11:39,18 January 2023 17:16,Online,Participated
+24181,20.23,19 January 2023 09:15,16 January 2023 21:18,16 January 2023 17:02,16 January 2023 21:10,Online,Participated
+25197,18.88,19 January 2023 09:15,18 January 2023 21:47,17 January 2023 15:59,18 January 2023 21:21,Online,Participated
+25702,19.39,19 January 2023 09:15,17 January 2023 11:13,17 January 2023 10:57,17 January 2023 10:57,Online,Participated
+25210,18.75,19 January 2023 09:15,19 January 2023 01:14,17 January 2023 15:47,19 January 2023 01:04,Online,Participated
+24201,27.71,19 January 2023 09:15,17 January 2023 18:36,16 January 2023 19:44,17 January 2023 18:26,Online,Participated
+24202,20.32,19 January 2023 09:15,18 January 2023 23:06,18 January 2023 01:53,18 January 2023 01:54,Online,Participated
+25213,19.15,19 January 2023 09:15,16 January 2023 11:36,16 January 2023 11:28,16 January 2023 11:28,Online,Participated
+25215,20.19,19 January 2023 09:15,17 January 2023 03:26,17 January 2023 03:16,17 January 2023 03:16,Online,Participated
+25217,21.45,19 January 2023 09:15,16 January 2023 21:52,16 January 2023 21:41,16 January 2023 21:41,Online,Participated
+24211,21.05,19 January 2023 09:15,16 January 2023 22:22,16 January 2023 22:11,16 January 2023 22:11,Online,Participated
+24128,21.31,19 January 2023 09:15,17 January 2023 20:57,17 January 2023 03:33,17 January 2023 03:33,Online,Participated
+25231,18.85,19 January 2023 09:15,17 January 2023 15:53,17 January 2023 15:41,17 January 2023 15:41,Online,Participated
+25835,20.25,19 January 2023 09:15,17 January 2023 15:33,17 January 2023 15:21,17 January 2023 15:21,Online,Participated
+25715,20.19,19 January 2023 09:15,16 January 2023 17:52,16 January 2023 17:29,16 January 2023 17:31,Online,Participated
+24236,20.45,19 January 2023 09:15,16 January 2023 19:51,16 January 2023 19:39,16 January 2023 19:40,Online,Participated
+25716,30.57,19 January 2023 09:15,17 January 2023 16:53,16 January 2023 14:34,17 January 2023 15:58,Online,Participated
+25770,20.35,19 January 2023 09:15,18 January 2023 22:19,17 January 2023 00:20,17 January 2023 00:20,Online,Participated
+24235,22.45,19 January 2023 09:15,18 January 2023 15:46,18 January 2023 15:37,18 January 2023 15:37,Online,Participated
+25251,19.03,19 January 2023 09:15,17 January 2023 19:13,17 January 2023 18:53,17 January 2023 18:53,Online,Participated
+25252,18.94,19 January 2023 09:15,17 January 2023 23:32,17 January 2023 23:25,17 January 2023 23:25,Online,Participated
+25256,21.22,19 January 2023 09:15,16 January 2023 11:01,16 January 2023 10:46,16 January 2023 10:48,Online,Participated
+24263,19.95,19 January 2023 09:15,18 January 2023 21:13,17 January 2023 21:46,18 January 2023 16:04,Online,Participated
+25433,18.8,19 January 2023 09:15,16 January 2023 22:24,16 January 2023 22:14,16 January 2023 22:14,Online,Participated
+25722,19.34,19 January 2023 09:15,17 January 2023 17:24,17 January 2023 17:15,17 January 2023 17:15,Online,Participated
+24139,20.05,19 January 2023 09:15,18 January 2023 18:05,18 January 2023 17:48,18 January 2023 17:49,Online,Participated
+25290,19.33,19 January 2023 09:15,17 January 2023 16:46,17 January 2023 16:32,17 January 2023 16:32,Online,Participated
+25291,21.13,19 January 2023 09:15,17 January 2023 13:52,17 January 2023 13:44,17 January 2023 13:44,Online,Participated
+25292,19.13,19 January 2023 09:15,18 January 2023 16:15,16 January 2023 19:00,16 January 2023 19:00,Online,Participated
+24450,24.68,19 January 2023 09:15,17 January 2023 11:10,17 January 2023 10:58,17 January 2023 10:58,Online,Participated
+24286,58.59,19 January 2023 09:15,17 January 2023 09:42,17 January 2023 09:25,17 January 2023 09:25,Online,Participated
+25731,18.77,19 January 2023 09:15,18 January 2023 23:35,16 January 2023 22:53,16 January 2023 22:53,Online,Participated
+24298,20.88,19 January 2023 09:15,17 January 2023 18:04,17 January 2023 17:56,17 January 2023 17:56,Online,Participated
+24301,20.32,19 January 2023 09:15,17 January 2023 20:07,16 January 2023 17:43,17 January 2023 19:58,Online,Participated
+25740,19.01,19 January 2023 09:15,17 January 2023 02:51,17 January 2023 02:42,17 January 2023 02:42,Online,Participated
+24312,19.91,19 January 2023 09:15,16 January 2023 19:58,16 January 2023 19:41,16 January 2023 19:41,Online,Participated
+25315,19.35,19 January 2023 09:15,16 January 2023 11:49,16 January 2023 11:38,16 January 2023 11:38,Online,Participated
+25324,18.78,19 January 2023 09:15,16 January 2023 20:24,16 January 2023 20:15,16 January 2023 20:15,Online,Participated
+24508,20.22,19 January 2023 09:15,16 January 2023 22:26,16 January 2023 22:12,16 January 2023 22:18,Online,Participated
+25333,19.04,19 January 2023 09:15,16 January 2023 17:42,16 January 2023 17:30,16 January 2023 17:30,Online,Participated
+25340,20.01,19 January 2023 09:15,16 January 2023 17:39,16 January 2023 13:52,16 January 2023 13:52,Online,Participated
+24328,25.26,19 January 2023 09:15,17 January 2023 12:24,16 January 2023 17:19,17 January 2023 11:57,Online,Participated
+25343,19.98,19 January 2023 09:15,17 January 2023 10:43,17 January 2023 10:29,17 January 2023 10:33,Online,Participated
+25348,19.11,19 January 2023 09:15,18 January 2023 18:42,16 January 2023 16:44,18 January 2023 18:29,Online,Participated
+24334,20.13,19 January 2023 09:15,17 January 2023 23:29,17 January 2023 23:21,17 January 2023 23:21,Online,Participated
+25350,21.3,19 January 2023 09:15,18 January 2023 23:41,16 January 2023 13:14,17 January 2023 11:21,Online,Participated
+25355,20.42,19 January 2023 09:15,16 January 2023 11:21,16 January 2023 11:11,16 January 2023 11:11,Online,Participated
+24350,20.03,19 January 2023 09:15,17 January 2023 12:53,17 January 2023 10:28,17 January 2023 12:42,Online,Participated
+25373,19.21,19 January 2023 09:15,17 January 2023 13:23,17 January 2023 09:54,17 January 2023 09:54,Online,Participated
+24360,20.4,19 January 2023 09:15,16 January 2023 10:35,16 January 2023 10:23,16 January 2023 10:23,Online,Participated
+25374,20.52,19 January 2023 09:15,17 January 2023 10:42,17 January 2023 10:32,17 January 2023 10:33,Online,Participated
+25385,19.54,19 January 2023 09:15,18 January 2023 18:35,18 January 2023 18:19,18 January 2023 18:19,Online,Participated
+24370,21.49,19 January 2023 09:15,17 January 2023 12:06,17 January 2023 09:31,17 January 2023 11:54,Online,Participated
+24371,21.52,19 January 2023 09:15,17 January 2023 11:50,17 January 2023 11:40,17 January 2023 11:40,Online,Participated
+25399,19.99,19 January 2023 09:15,17 January 2023 17:35,17 January 2023 17:20,17 January 2023 17:21,Online,Participated
+24376,19.8,19 January 2023 09:15,17 January 2023 18:12,17 January 2023 18:02,17 January 2023 18:02,Online,Participated
+24441,20.5,19 January 2023 09:15,18 January 2023 19:56,16 January 2023 15:48,16 January 2023 15:48,Online,Participated
+25405,19.54,19 January 2023 09:15,17 January 2023 15:57,16 January 2023 19:40,16 January 2023 20:36,Online,Participated
+25407,19.77,19 January 2023 09:15,16 January 2023 17:22,16 January 2023 17:04,16 January 2023 17:05,Online,Participated
+24383,20.55,19 January 2023 09:15,18 January 2023 08:57,16 January 2023 17:08,18 January 2023 08:50,Online,Participated
+24387,19.87,19 January 2023 09:15,18 January 2023 20:05,17 January 2023 17:57,18 January 2023 19:57,Online,Participated
+25420,19.27,19 January 2023 09:15,16 January 2023 13:08,16 January 2023 12:50,16 January 2023 12:50,Online,Participated
+25697,19.58,24 January 2023 09:30,23 January 2023 02:49,22 January 2023 17:38,23 January 2023 02:38,Online,Participated
+25191,19.65,24 January 2023 09:30,20 January 2023 14:37,20 January 2023 14:26,20 January 2023 14:26,Online,Participated
+25192,20.53,24 January 2023 09:30,20 January 2023 14:14,20 January 2023 14:07,20 January 2023 14:07,Online,Participated
+25425,18.89,24 January 2023 09:30,20 January 2023 22:55,20 January 2023 22:42,20 January 2023 22:42,Online,Participated
+24189,20.5,24 January 2023 09:30,21 January 2023 15:56,20 January 2023 18:44,21 January 2023 15:48,Online,Participated
+24192,20.18,24 January 2023 09:30,20 January 2023 23:19,20 January 2023 23:10,20 January 2023 23:10,Online,Participated
+25206,19.93,24 January 2023 09:30,21 January 2023 15:52,21 January 2023 15:35,21 January 2023 15:35,Online,Participated
+24199,21.13,24 January 2023 09:30,23 January 2023 19:17,23 January 2023 19:03,23 January 2023 19:08,Online,Participated
+24124,20.6,24 January 2023 09:30,24 January 2023 09:42,21 January 2023 17:54,21 January 2023 17:54,Online,Participated
+24204,21.1,24 January 2023 09:30,23 January 2023 23:58,22 January 2023 00:20,23 January 2023 23:52,Online,Participated
+24208,21.17,24 January 2023 09:30,23 January 2023 12:32,21 January 2023 23:04,23 January 2023 12:17,Online,Participated
+24210,21.63,24 January 2023 09:30,21 January 2023 15:26,21 January 2023 15:08,21 January 2023 15:16,Online,Participated
+24212,21.45,24 January 2023 09:30,23 January 2023 18:18,23 January 2023 18:11,23 January 2023 18:11,Online,Participated
+24216,20.71,24 January 2023 09:30,24 January 2023 07:58,22 January 2023 10:37,24 January 2023 07:48,Online,Participated
+24130,19.99,24 January 2023 09:30,22 January 2023 12:32,22 January 2023 12:21,22 January 2023 12:21,Online,Participated
+24228,20.15,24 January 2023 09:30,23 January 2023 23:26,20 January 2023 20:52,23 January 2023 23:20,Online,Participated
+24132,27.69,24 January 2023 09:30,19 January 2023 20:02,19 January 2023 19:53,19 January 2023 19:53,Online,Participated
+24237,20.26,24 January 2023 09:30,23 January 2023 15:57,23 January 2023 15:34,23 January 2023 15:41,Online,Participated
+24238,20.38,24 January 2023 09:30,23 January 2023 12:55,20 January 2023 00:44,23 January 2023 12:48,Online,Participated
+24239,20.21,24 January 2023 09:30,22 January 2023 14:13,22 January 2023 13:55,22 January 2023 13:55,Online,Participated
+24246,21.43,24 January 2023 09:30,23 January 2023 12:54,23 January 2023 12:40,23 January 2023 12:43,Online,Participated
+24247,20.71,24 January 2023 09:30,20 January 2023 10:35,20 January 2023 10:23,20 January 2023 10:23,Online,Participated
+24250,28.02,24 January 2023 09:30,23 January 2023 18:27,21 January 2023 11:33,21 January 2023 11:33,Online,Participated
+24253,20.32,24 January 2023 09:30,23 January 2023 23:32,20 January 2023 10:07,23 January 2023 23:21,Online,Participated
+24270,23.78,24 January 2023 09:30,20 January 2023 18:15,20 January 2023 18:04,20 January 2023 18:04,Online,Participated
+25288,19.52,24 January 2023 09:30,21 January 2023 17:07,21 January 2023 16:56,21 January 2023 16:56,Online,Participated
+24283,21.06,24 January 2023 09:30,22 January 2023 14:29,22 January 2023 14:22,22 January 2023 14:22,Online,Participated
+24285,20.09,24 January 2023 09:30,20 January 2023 16:08,19 January 2023 21:24,20 January 2023 15:56,Online,Participated
+25728,18.84,24 January 2023 09:30,23 January 2023 17:43,23 January 2023 17:33,23 January 2023 17:33,Online,Participated
+25297,28.58,24 January 2023 09:30,21 January 2023 13:15,20 January 2023 18:29,21 January 2023 12:58,Online,Participated
+24290,20.65,24 January 2023 09:30,20 January 2023 09:22,20 January 2023 09:13,20 January 2023 09:13,Online,Participated
+25733,19.33,24 January 2023 09:30,23 January 2023 22:27,22 January 2023 23:08,22 January 2023 23:08,Online,Participated
+25302,18.92,24 January 2023 09:30,23 January 2023 23:59,22 January 2023 10:45,23 January 2023 23:48,Online,Participated
+25829,22.76,24 January 2023 09:30,23 January 2023 12:13,23 January 2023 11:41,23 January 2023 12:04,Online,Participated
+25738,19.71,24 January 2023 09:30,23 January 2023 18:31,23 January 2023 16:34,23 January 2023 17:30,Online,Participated
+25311,18.94,24 January 2023 09:30,23 January 2023 16:04,23 January 2023 15:46,23 January 2023 15:46,Online,Participated
+24315,20.67,24 January 2023 09:30,20 January 2023 09:40,20 January 2023 09:23,20 January 2023 09:30,Online,Participated
+24149,20.05,24 January 2023 09:30,22 January 2023 19:07,22 January 2023 18:46,22 January 2023 18:50,Online,Participated
+25325,18.99,24 January 2023 09:30,22 January 2023 19:00,22 January 2023 18:48,22 January 2023 18:48,Online,Participated
+24395,20.59,24 January 2023 09:30,20 January 2023 16:55,20 January 2023 16:29,20 January 2023 16:43,Online,Participated
+25445,19.45,24 January 2023 09:30,20 January 2023 16:48,20 January 2023 16:38,20 January 2023 16:38,Online,Participated
+24355,20.49,24 January 2023 09:30,23 January 2023 18:10,21 January 2023 15:37,22 January 2023 17:29,Online,Participated
+25380,18.78,24 January 2023 09:30,20 January 2023 21:21,20 January 2023 20:04,20 January 2023 21:13,Online,Participated
+25389,19.22,24 January 2023 09:30,20 January 2023 22:57,20 January 2023 22:48,20 January 2023 22:48,Online,Participated
+24159,20.78,24 January 2023 09:30,22 January 2023 18:26,22 January 2023 18:17,22 January 2023 18:17,Online,Participated
+25401,19.05,24 January 2023 09:30,23 January 2023 06:05,23 January 2023 05:53,23 January 2023 05:53,Online,Participated
+25409,19.98,24 January 2023 09:30,22 January 2023 13:28,22 January 2023 13:20,22 January 2023 13:20,Online,Participated
+24381,20.84,24 January 2023 09:30,21 January 2023 19:11,19 January 2023 18:50,19 January 2023 18:50,Online,Participated
+25769,18.9,24 January 2023 09:30,21 January 2023 15:36,20 January 2023 14:14,21 January 2023 15:25,Online,Participated
+25417,19.4,24 January 2023 09:30,22 January 2023 13:33,22 January 2023 13:21,22 January 2023 13:21,Online,Participated
+24392,20.18,24 January 2023 09:30,23 January 2023 14:14,22 January 2023 17:10,23 January 2023 12:56,Online,Participated
